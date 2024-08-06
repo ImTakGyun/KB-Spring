@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--작성된 테이블 매퍼를 연결해준다.
+    작성한 인터페이스와 sql을 서로 매핑해주는 역할-->
+<mapper namespace="com.example.mybatis.mapper.MemberMapper">
+    <select id="selectAll">
+        select * from member
+    </select>
+
+    <select id="selectById">
+        SELECT * FROM member WHERE id=#{id}
+    </select>
+
+    <select id="selectAllOrderByAgeAsc">
+        SELECT * FROM member ORDER BY AGE
+    </select>
+
+    <select id="selectAllCount">
+        SELECT COUNT(*) FROM member
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="member.id" keyColumn="id">
+        INSERT INTO member(name, email, age) VALUES(#{member.name}, #{member.email}, #{member.age})
+    </insert>
+
+    <update id="update">
+        UPDATE member SET name=#{member.name}, email=#{member.email}, age=#{member.age} WHERE id=#{member.id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM member WHERE id=#{member.id}
+    </delete>
+
+    <select id="selectById">
+        SELECT * FROM member WHERE id=#{id}
+    </select>
+</mapper>
+
