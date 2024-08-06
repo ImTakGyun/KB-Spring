@@ -39,3 +39,4 @@ public interface ArticleMapper {
     @Delete("DELETE article WHERE id=#{id}")
     int deleteById(@Param("id") Long id);
 }
+

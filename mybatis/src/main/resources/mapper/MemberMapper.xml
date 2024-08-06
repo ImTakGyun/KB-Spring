@@ -2,20 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.MemberMapper">
 
-<!--작성된 테이블 매퍼를 연결해준다.
-    작성한 인터페이스와 sql을 서로 매핑해주는 역할-->
-<mapper namespace="com.example.mybatis.mapper.MemberMapper">
     <select id="selectAll">
-        select * from member
-    </select>
-
-    <select id="selectById">
-        SELECT * FROM member WHERE id=#{id}
+        SELECT * FROM member
     </select>
 
     <select id="selectAllOrderByAgeAsc">
-        SELECT * FROM member ORDER BY AGE
+        SELECT * FROM member ORDER BY age ASC
     </select>
 
     <select id="selectAllCount">
@@ -37,5 +31,5 @@
     <select id="selectById">
         SELECT * FROM member WHERE id=#{id}
     </select>
-</mapper>
 
+</mapper>
