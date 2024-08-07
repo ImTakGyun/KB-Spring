@@ -19,3 +19,4 @@ public interface MemberMapper {
     int delete(@Param("member") Member member);
 }
 
+

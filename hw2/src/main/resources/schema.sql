@@ -1,0 +1,15 @@
+CREATE TABLE seller (
+	id INTEGER AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(128) NOT NULL,
+	age INTEGER
+);
+
+CREATE TABLE product (
+   id INTEGER AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(256) UNIQUE,
+   price INTEGER,
+   created DATETIME,
+   updated DATETIME,
+   seller_id INTEGER,
+   FOREIGN KEY(seller_id) REFERENCES seller(id)
+);

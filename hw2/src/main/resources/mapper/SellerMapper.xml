@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hw2.mapper.SellerMapper">
+
+    <select id="selectAll">
+        SELECT * FROM seller
+    </select>
+
+    <select id="selectAllCount">
+        SELECT COUNT(*) FROM seller
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="seller.id" keyColumn="id">
+        INSERT INTO seller(name, age) VALUES(#{seller.name}, #{seller.age})
+    </insert>
+
+    <update id="update">
+        UPDATE seller SET name=#{seller.name}, age=#{seller.age} WHERE id=#{seller.id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM seller WHERE id=#{seller.id}
+    </delete>
+
+    <select id="selectById">
+        SELECT * FROM seller WHERE id=#{id}
+    </select>
+
+</mapper>
+

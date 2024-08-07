@@ -17,7 +17,7 @@ public class ArticleService {
     private final MemberMapper memberMapper;
 
     public ArticleDto getArticleById(Long id) {
-        Article article = (Article) articleMapper.selectByMemberId(id);
+        Article article = articleMapper.selectById(id);
         return mapToArticleDto(article);
     }
 

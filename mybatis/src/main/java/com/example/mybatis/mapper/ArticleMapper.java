@@ -19,6 +19,11 @@ public interface ArticleMapper {
     int selectAllCount();
 
     @ResultMap("articleResult")
+    @Select("SELECT * FROM article WHERE member_id=#{id}")
+    Article selectById(@Param("id") Long id);
+
+
+    @ResultMap("articleResult")
     @Select("SELECT * FROM article WHERE member_id=#{memberId}")
     List<Article> selectByMemberId(@Param("memberId") Long memberId);
 
